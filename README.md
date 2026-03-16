@@ -164,7 +164,7 @@ resume_text
 job_description
 
 
-Example response:
+# Example response:
 
 
 {
@@ -177,9 +177,9 @@ Example response:
 
 
 
-Score using resume PDF
+# Score using resume PDF
 
-POST /score/pdf
+## POST /score/pdf
 
 Form parameters:
 
@@ -188,25 +188,25 @@ job_description
 
 Score using both PDFs
 
-POST /score/both-pdf
+## POST /score/both-pdf
 
 Form parameters:
 
 resume_file
 jd_file
 
-Debug skill extraction
+# Debug skill extraction
 
-POST /debug/skills
+## POST /debug/skills
 
 Returns intermediate information including normalized text previews and detected skills.
 
-How to Run
-1. Install dependencies
+# How to Run
+## 1. Install dependencies
 pip install -r requirements.txt
-2. Start the server
+## 2. Start the server
 uvicorn app.main:app --reload
-3. Open API documentation
+## 3. Open API documentation
 
 Open the interactive API documentation in your browser:
 
@@ -214,7 +214,7 @@ http://127.0.0.1:8000/docs
 
 This interface allows you to test all API endpoints directly.
 
-Example Workflow
+# Example Workflow
 
 Upload a resume PDF or provide resume text
 
@@ -228,22 +228,22 @@ Semantic similarity is computed
 
 Skill overlaps and missing skills are returned
 
-Key Design Choices
-Transformer Embeddings
+# Key Design Choices
+## Transformer Embeddings
 
 This project uses SentenceTransformers because they provide strong semantic representations while remaining lightweight enough to run locally.
 
 The model all-MiniLM-L6-v2 was selected because it offers a good balance between performance and computational efficiency.
 
-Cosine Similarity
+## Cosine Similarity
 
 Cosine similarity is a widely used method for comparing embedding vectors and works well for semantic similarity tasks.
 
-Deterministic Skill Extraction
+## Deterministic Skill Extraction
 
 Skills are extracted using a dictionary-based approach rather than a probabilistic model. This keeps results interpretable and consistent across runs.
 
-FastAPI Backend
+## FastAPI Backend
 
 FastAPI was chosen because it provides:
 
@@ -253,7 +253,7 @@ automatic API documentation
 
 simple request validation
 
-Limitations
+## Limitations
 
 This project is intended as a demonstration and has several limitations:
 
@@ -265,7 +265,7 @@ Resume parsing quality depends on the formatting of the PDF
 
 Future improvements could include section-aware scoring, richer skill ontologies, or model fine-tuning using hiring datasets.
 
-Authorship and Attribution
+## Authorship and Attribution
 
 All application code in this repository was written by Harish Kasu.
 
@@ -285,7 +285,7 @@ FlashText
 
 No proprietary or employer-owned code is included in this repository.
 
-Purpose of This Repository
+## Purpose of This Repository
 
 This repository was created as a demonstration project to illustrate how semantic embeddings and simple NLP techniques can be used to evaluate resume and job description alignment.
 
