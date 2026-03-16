@@ -166,7 +166,7 @@ job_description
 
 Example response:
 
-```json
+
 {
   "alignment_score": 82.34,
   "skill_gap": {
@@ -174,6 +174,8 @@ Example response:
     "missing_skills": ["kubernetes"]
   }
 }
+
+
 
 Score using resume PDF
 
