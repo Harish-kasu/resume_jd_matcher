@@ -16,8 +16,8 @@ def extract_skills(text: str) -> set[str]:
     """
     Deterministic skill extraction from free text using a dictionary.
     """
-    canon_text = canonicalize_text(text)
-    found = _keyword_processor.extract_keywords(canon_text)
+    can_text = canonicalize_text(text)
+    found = _keyword_processor.extract_keywords(can_text)
     return set(found)
 
 def skill_gap(resume_text: str, jd_text: str) -> dict:
